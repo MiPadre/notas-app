@@ -22,4 +22,6 @@ app.set('port', 3000)
 //ARCHIVOS ESTATICOS: donde estaran nuestros archivos estaticos
 
 //SERVIDOR ESCUCHANDO: para inicializar nuestro servidor
-app.listen()
+
+//utilizamos el puerto creado con app.get('port')
+app.listen(app.get('port'))
