@@ -2,7 +2,9 @@
 //requerimos express y la guardamos en una cosntante de mismo nombre para poder ejecutarlo
 //express es una funcion y al ejecutarlo me devuelve un objeto que voy a lmacenarlo en una
 //constante app
+//path es un modulo para ubicar las rutas
 const express = require('express')
+const path = require('path')
 
 //INICIALIZACIONES
 const app = express()
@@ -13,6 +15,12 @@ const app = express()
 //Los servicios en la nube tambien te puden dar un puerto, lo consideramos con process.env.PORT
 //Esto esta diciendo si existe un puerto en mi computador que lo tome, sino que coja 3000
 app.set('port', process.env.PORT || 3000)
+
+//le decimos donde esta la ruta a views mediante el metodo join() que me permite unir directorios.
+//Hay una constante en nodejs __dirname que me devuelve la ruta de  donde se esta ejecutando 
+//determinado archivo. si ejecuto index.js __dirname me lleva a la carpeta src y la puedo
+//concatenar con otra en este caso views
+app.set('views', path.join(__dirname, 'views'))
 
 //MIDDLEWARES: donde iran todas las funciones que van a ser utilizadas antes que lleguen al servidor
 // o de que se pasen a las rutas
