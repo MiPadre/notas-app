@@ -11,6 +11,7 @@ const app = express()
 
 //Configuramos el puerto en el numero 3000
 //Los servicios en la nube tambien te puden dar un puerto, lo consideramos con process.env.PORT
+//Esto esta diciendo si existe un puerto en mi computador que lo tome, sino que coja 3000
 app.set('port', process.env.PORT || 3000)
 
 //MIDDLEWARES: donde iran todas las funciones que van a ser utilizadas antes que lleguen al servidor
