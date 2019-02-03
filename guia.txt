@@ -1,0 +1,47 @@
+#Crear el archivo package.json
+npm init --yes
+
+#express Instalar modulos tanto para el frontend como para el backend. express es el framework de nodejs
+#con express voy a poder crear el servidor sencillamente de manera profesional.
+
+#express-handlebars es para integrar un motor de plantillas de express en nuestro servidor
+
+#express-session es para crear sesiones dentro del servidor. Cuando el usuario se autentifique
+#el va a insertar sus datos, su contraseña y usuario, pero cuando visite otra pagina no queremos
+#que se tenga que volver a autentificar, es por eso que vamos a almacenar temporalmente sus datos
+#en una sesion.
+
+#method-override es para poder extender la funcionalidad de los formularios. Los formularios te 
+#permiten enviar metodos POST y metodos GET, pero existen otros metodos como el PUSH o DELATE
+
+#mongoose nos permite unir express con una base de datos mongodb. mongoose no es una base de datos 
+#es un modulo
+
+#passport es para poder autentificarme
+
+#bcrypt me permite cifrar la contraseña mediante un hash
+
+#connect-flash es para poder enviar mensajes entre multiples vistas. cuando el usuario se equivoque vamos
+#a querer enviar un mensaje. Cuando envie una contraseña menor que 4 digitos vamos a querer enviar un mensaje
+
+npm i express express-handlebars express-session method-override mongoose passport passport-local bcryptjs connect-flash
+
+#crear carpetas en la carpeta src. nos movemos a la carpeta src mediante:
+
+cd src
+
+#creamos las carpetas:
+
+mkdir config helpers models public routes views
+
+# views va a contener las vistas html
+
+# routes para poder enviar las url o las rutas de nuestro servidor
+
+# public para poder insertar todos los archivos estaticos imagenes fuentes css javascript
+
+# models para poder decir como van a lucir los datos que se van a almacenar en la base de datos
+
+# helpers para crear funciones que mi servidor podrá utilizar y se podran reutilizar en cualquier parte
+
+#config para almacenar variables de configuracion del entorno. configuracion de autentificacion
