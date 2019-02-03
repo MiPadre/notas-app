@@ -34,6 +34,9 @@ app.engine('.hbs', exphbs({
     partialsDir: path.join(app.get('views'), 'partials'),
     extname: '.hbs'
 }))
+//Hemos terminado la configuracion de handlebars pero no la estamos utilizan aun. Para hacerlo:
+//app.set('view engine') para configurar el motor de plantillas, el motor de las vistas .hbs
+app.set('view engine', '.hbs')
 
 //MIDDLEWARES: donde iran todas las funciones que van a ser utilizadas antes que lleguen al servidor
 // o de que se pasen a las rutas
