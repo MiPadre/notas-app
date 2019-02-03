@@ -45,3 +45,11 @@ mkdir config helpers models public routes views
 # helpers para crear funciones que mi servidor podrá utilizar y se podran reutilizar en cualquier parte
 
 #config para almacenar variables de configuracion del entorno. configuracion de autentificacion
+
+# creamos un control de versiones local y otro remoto en github. Para conectarlos:
+
+git remote add origin https://github.com/MiPadre/notas-app.git
+
+# y a continuacion
+
+git push -u origin master

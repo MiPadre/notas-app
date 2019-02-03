@@ -1,1 +1,1 @@
-/**index.js es para poder arrancar nuestro servidor */
+/**index.js es para poder arrancar nuestro servidor de express */
