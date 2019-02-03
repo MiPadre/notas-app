@@ -26,4 +26,6 @@ app.set('port', process.env.PORT || 3000)
 //SERVIDOR ESCUCHANDO: para inicializar nuestro servidor
 
 //utilizamos el puerto creado con app.get('port')
-app.listen(app.get('port'))
+app.listen(app.get('port'), () => {
+    console.log(`Servidor en el puerto ${app.get('port')}`)
+})
