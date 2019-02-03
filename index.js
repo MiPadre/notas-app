@@ -10,7 +10,8 @@ const app = express()
 //AJUSTES: seccion de configuracion. aqui iran todas nuestras configuraciones
 
 //Configuramos el puerto en el numero 3000
-app.set('port', 3000)
+//Los servicios en la nube tambien te puden dar un puerto, lo consideramos con process.env.PORT
+app.set('port', process.env.PORT || 3000)
 
 //MIDDLEWARES: donde iran todas las funciones que van a ser utilizadas antes que lleguen al servidor
 // o de que se pasen a las rutas
