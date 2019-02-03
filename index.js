@@ -4,18 +4,22 @@
 //constante app
 const express = require('express')
 
-//Inicializaciones
+//INICIALIZACIONES
 const app = express()
 
-//Settings seccion de configuracion. aqui iran todas nuestras configuraciones
+//AJUSTES: seccion de configuracion. aqui iran todas nuestras configuraciones
 
-//Middelwares donde iran todas las funciones que van a ser utilizadas antes que lleguen al servidor
+//Configuramos el puerto en el numero 3000
+app.set('port', 3000)
+
+//MIDDLEWARES: donde iran todas las funciones que van a ser utilizadas antes que lleguen al servidor
 // o de que se pasen a las rutas
 
-//Global Variables para colocar cietros datos que queremos que nuestra aplicacion tenga accesibles
+//GLOBAL VARIABLES: para colocar cietros datos que queremos que nuestra aplicacion tenga accesibles
 
-//Routes
+//ROUTES
 
-//Static Files donde estaran nuestros archivos estaticos
+//ARCHIVOS ESTATICOS: donde estaran nuestros archivos estaticos
 
-//Server is listening para inicializar nuestro servidor
+//SERVIDOR ESCUCHANDO: para inicializar nuestro servidor
+app.listen()
