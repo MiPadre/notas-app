@@ -69,6 +69,8 @@ app.use(require('./routes/users'))
 
 //ARCHIVOS ESTATICOS: donde estaran nuestros archivos estaticos
 
+app.use(express.static(path.join(__dirname, 'public')))
+
 //SERVIDOR ESCUCHANDO: para inicializar nuestro servidor
 
 //utilizamos el puerto creado con app.get('port')
