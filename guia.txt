@@ -53,3 +53,6 @@ git remote add origin https://github.com/MiPadre/notas-app.git
 # y a continuacion
 
 git push -u origin master
+
+# Instalacion de nodemon. Reinicializa el servidor automaticamente
+npm i nodemon -D
