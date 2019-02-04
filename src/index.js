@@ -7,6 +7,8 @@
 const express = require('express')
 const path = require('path')
 const exphbs = require('express-handlebars')
+const methodOverride = require('method-override')
+const session = require('express-session')
 
 //INICIALIZACIONES
 const app = express()
@@ -39,7 +41,22 @@ app.engine('.hbs', exphbs({
 app.set('view engine', '.hbs')
 
 //MIDDLEWARES: donde iran todas las funciones que van a ser utilizadas antes que lleguen al servidor
-// o de que se pasen a las rutas
+// o de que se pasen a las rutas. Utilizo el metodo urlencoded() de express(), sirve para cuando un
+//formulario quiera enviarme determinados datos yo pueda entenderlo. Cuando un usuario se quiera
+//registrar me va a enviar su email y su contraseña, y yo quiero recibir esos datos.
+//le damos un objeto de configuracion, con la propiedad extended: false, ya que solo queremos sus
+//datos, no otros tipos de archivos como imagenes, etc.
+//methodOverride() nos sirve para que los formularios nos puedan dar otros tipos de metodos, no
+//solamente GET POST, sino otros como PUSH y DELETE y para hacerlo le enviamos un input oculto
+//_method
+// A traves de session vamos a poder autentificar al usuario y almacenar estos datos temporalmente
+app.use(express.urlencoded({extended: false}))
+app.use(methodOverride('-method'))
+app.use(session({
+    secret: 'mysecretapp',
+    resave: true,
+    saveUninitialized: true
+}))
 
 //GLOBAL VARIABLES: para colocar cietros datos que queremos que nuestra aplicacion tenga accesibles
 
