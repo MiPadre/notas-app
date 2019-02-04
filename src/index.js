@@ -12,6 +12,7 @@ const session = require('express-session')
 
 //INICIALIZACIONES
 const app = express()
+require('./database')
 
 //AJUSTES: seccion de configuracion. aqui iran todas nuestras configuraciones
 
