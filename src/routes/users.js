@@ -7,11 +7,11 @@ const router = express.Router()
 
 /**Cuando visites la pagina de registro de mi aplicacion, vas a manejarlo con una funcion que maneje las peticiones y
 las respuestas y vas a enviar los siguientes mensajes */
-router.get('/signin', (req, res) => {
+router.get('/users/signin', (req, res) => {
     res.send('Ingresando a la App')
 })
 
-router.get('/signup', (req, res) => {
+router.get('/users/signup', (req, res) => {
     res.send('Formulario de Autentificacion')
 })
 
