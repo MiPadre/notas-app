@@ -53,7 +53,7 @@ app.set('view engine', '.hbs')
  * A traves de session vamos a poder autentificar al usuario y almacenar estos datos temporalmente */
 
 app.use(express.urlencoded({extended: false}))
-app.use(methodOverride('-method'))
+app.use(methodOverride('_method'))
 app.use(session({
     secret: 'mysecretapp',
     resave: true,
