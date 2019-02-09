@@ -3,6 +3,8 @@
 const express = require('express')
 const router = express.Router()
 
+const Note = require('../models/Note')
+
 /**Configuracion de las nuevas notas que introduzcamos */
 
 router.get('/notes/add', (req, res) => {
@@ -14,7 +16,7 @@ router.get('/notes/add', (req, res) => {
  *  que no haya titulo o descripcion, mostrando el tipo de error
 */
 
-router.post('/notes/new-note', (req, res) => {
+router.post('/notes/new-note', async (req, res) => {
     const {title, description} = req.body
     const errors = []
     if(!title){
@@ -30,7 +32,9 @@ router.post('/notes/new-note', (req, res) => {
             description
         })
     }else {
-        res.send('OK')
+        const newNote = new Note({title, description})
+        await newNote.save()
+        res.redirect('/notes')
     }
 })
 
