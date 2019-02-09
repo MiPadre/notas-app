@@ -42,8 +42,10 @@ router.post('/notes/new-note', async (req, res) => {
 las respuestas y vas a enviar de momento un mensaje que diga Notas desde la base de datos. En el futuro devolvera las 
 notas de la base de datos */
 
-router.get('/notes', (req, res) => {
-    res.send('Notas desde la base de datos')
+router.get('/notes', async (req, res) => {
+    //De la coleccion Note quiero buscar todos los datos. Renderiamos all-notes y le pasamos los datos de las notas
+    const notes = await Note.find()
+    res.render('notes/all-notes', {notes})
 })
 
 module.exports = router
